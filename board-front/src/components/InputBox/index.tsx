@@ -1,6 +1,7 @@
 import { ChangeEvent, Dispatch, forwardRef, SetStateAction, KeyboardEvent } from 'react';
 import './style.css';
 
+// interface : props 
 interface Props{
     label: string;
     type: 'text' | 'password';
@@ -30,7 +31,7 @@ const InputBox = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
         setValue(value);
     }
 
-    // event handler: 키 이벤트 처리 함수 //
+    // event handler: input 키 이벤트 처리 함수 //
     const onKeyDownHandler = (event: KeyboardEvent<HTMLInputElement>) =>{
         if(!onKeyDown) return;
         onKeyDown(event);
